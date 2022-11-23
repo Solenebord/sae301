@@ -1,1 +1,1 @@
-# sae301 - Solène Bord, Alice Carlin
+# sae301 - Solène Bord et Alice Carlin

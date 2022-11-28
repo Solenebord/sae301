@@ -1,4 +1,47 @@
+<<<<<<< Updated upstream
 <a href="accueil">Accueil</a> | <a href="manifs">Manifs</a> | <a href="admin">Admin</a>
 
 //{% if is_granted("ROLE_ADMIN") %} pour "si c'est un admin"
 //{%if app.user%} pour si c'est quelqu'un de co
+=======
+<header>
+    <div id="main-header">
+        <div id="header-logo">
+
+        </div>
+
+
+        <div id="header-liens">
+            <a href="accueil">Accueil</a> |
+            <a href="manif">Manifestations</a> |
+            {% if is_granted("ROLE_ADMIN") %}<a href="admin">Admin</a> | {% endif %}
+            {%if app.user%}<a href="logout">Déconnexion</a>{% endif %}
+        </div>
+
+         <div id="utilisateur-pictos">
+            <a href="panier">panier</a> |
+            <a href="#">co/inscri</a>
+        </div>
+    </div>
+    <div id="search-header">
+        <div id="recherche-wrapper">
+            <form>
+                <input type="text" placeholder="Cherchez une manifestation.." name="search">
+                <button type="submit">loupe</button>
+            </form>
+        </div>
+
+        <div id="filtres-wrapper">
+
+            <div class="dropdown">
+                <button class="dropbtn">Genre</button>
+                <button class="dropbtn">Où</button>
+                <button class="dropbtn">Quand</button>
+            </div>
+
+        </div>
+    </div>
+
+
+</header>
+>>>>>>> Stashed changes

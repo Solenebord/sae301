@@ -8,6 +8,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\User;
+use App\Entity\Event;
+use App\Entity\Lieu;
 
 class DashboardController extends AbstractDashboardController
 {
@@ -43,7 +45,9 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Utilisateurs ig', 'fas fa-list', User::class);
+        yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-list', User::class);
+        yield MenuItem::linkToCrud('Manifestations', 'fas fa-list', Event::class);
+        yield MenuItem::linkToCrud('Lieux', 'fas fa-list', Lieu::class);
     }
     
 }

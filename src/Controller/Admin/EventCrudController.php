@@ -10,6 +10,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 
 class EventCrudController extends AbstractCrudController
 {
@@ -30,6 +31,7 @@ class EventCrudController extends AbstractCrudController
             ImageField::new('affiche')->setBasePath('uploads/')->setUploadDir('public/uploads/'),
             AssociationField::new('Lieu', 'Lieu'),
             DateTimeField::new('date'),
+            MoneyField::new('prix')->setCurrency('EUR'),
         ];
     }
 

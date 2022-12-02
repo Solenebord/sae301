@@ -19,7 +19,10 @@
         </div>
 
          <div id="utilisateur-pictos">
-            <a href="panier">panier</a> |
+            <a href="{{ path('app_panier') }}">panier
+                {% if app.request.attributes.get('_route') != 'app_panier' %}
+                <span id="panier">{{ app.session.get('panier')|length }}</span>
+                {% endif %}</a> |
             <a href="#">connexion / inscription</a>
         </div>
     </div>
@@ -37,7 +40,7 @@
 
         <div id="recherche-wrapper">
             <form>
-                <input type="text" placeholder="Cherchez une manifestation.." name="search">
+                <input type="text" placeholder="Cherchez une manifestation.." name="search"/>
                 <button type="submit">loupe</button>
             </form>
         </div>

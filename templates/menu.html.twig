@@ -20,7 +20,7 @@
 
          <div id="utilisateur-pictos">
             <a href="{{ path('app_panier') }}">panier
-                {% if app.request.attributes.get('_route') != 'app_panier' %}
+                {% if app.request.attributes.get('_route') != 'app_panier' and app.request.attributes.get('_route') != 'app_validation' %}
                 <span id="panier">{{ app.session.get('panier')|length }}</span>
                 {% endif %}</a> |
             <a href="#">connexion / inscription</a>

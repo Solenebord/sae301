@@ -1,6 +1,8 @@
 html{
+
     width: 100%;
     overflow-x: hidden;
+
 
 }
 body{
@@ -37,4 +39,78 @@ body{
     width: 100%;
 
     position: relative;
+}
+
+/* page agenda */
+
+.carte_spectacle {
+    width: 200px;
+    /*height: 328px;*/
+    height: 300px;
+    position: relative;
+    border-radius: 20px;
+}
+
+.carte_in {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.carte_lien {
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 200px;
+    margin: 50px;
+}
+
+.carte_entete {
+    background-color: rgba(23,5,31,0.7);
+    border-radius: 20px 20px 0 0;
+    padding: 5px 10px;
+}
+
+.info_hover {
+    background-color: rgba(23,5,31,0.6);
+    height: 200px;
+    opacity: 0;
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-end;
+    padding: 0 10px;
+}
+
+.info_hover:hover {
+    opacity: 1;
+}
+
+.carte_titre {
+    background-color: rgba(255,255,255,1);
+    color: black;
+    border-radius: 0 0 20px 20px;
+    padding: 0 10px;
+}
+
+.carte_genre {
+    background-color: rgba(239,161,113);
+    color: black;
+    position: absolute;
+    margin-left: 155px;
+    margin-top: -15px;
+    border-radius: 30px 30px 30px 0;
+    padding: 0 10px;
+}
+
+#liste_carte{
+    display:grid;
+    margin: 20px 100px;
+}
+
+/*Page Produit*/
+
+.article{
+    display: flex;
+    flex-direction: column;
+
 }

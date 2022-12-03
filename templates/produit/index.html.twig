@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Spectacle{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/accueil.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/menu.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+
+
+    <div class="article">
+
+        <div class="side_article">
+            <div class="article_genre">
+                <p>{{ events.genre }}</p>
+            </div>
+            <h1><span id="article">{{ events.titre }}</span></h1>
+            <h2 class="article_date">
+                {{ events.date }} - {{ events.horaire }}
+            </h2>
+            <p id="article_lieu">.{{ events.lieu.nomSalle }} {{ events.lieu.adresse }} {{ events.lieu.capacite }}</p>
+            <div id="article_info">
+                <p id="article_description">{{ events.descript }}</p>
+                <p id="article_cast">{{ events.cast }}</p>
+            </div>
+
+        </div>
+
+
+        <div class="article_affiche">
+            {# <img src="{{ asset('images') }}{{  events.affiche  }}" alt="affiche {{ events.titre }}">  #}
+
+            <p><span id="prix">{{ events.prix }}</span> €</p>
+        </div>
+
+
+
+
+
+    </div>
+
+    <div id="article_boutons">
+        <a class="bouton_secondaire" href="{{ path('app_manif') }}" >Retour</a>
+
+     {#   <form action="ajoutpanier" method="post" class="form_ajout"> #}
+        <label for="qte">Nombre de billets</label>
+            <input type="number" value="1" id="qte" name="qte" min="1" max="99">
+            <input type="hidden" id="id" value="{{ events.id }}">
+            <button id="ajout">Ajouter au panier</button>
+     {# </form> #}
+
+    </div>
+
+
+    {#<script type="text/javascript" src="scriptgeneral.js"></script>
+    <script type="text/javascript" src="scriptpagearticles.js"></script>#}
+
+
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="{{ asset('js/scriptgeneral.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/scriptpagearticles.js') }}"></script>
+{% endblock %}

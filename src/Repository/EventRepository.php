@@ -39,25 +39,39 @@ class EventRepository extends ServiceEntityRepository
         }
     }
 
+/*    public function findOneByIdJoinedToCategory(int $eventId): ?Event
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT p, c
+            FROM App\Entity\Event p
+            INNER JOIN p.lieu c
+            WHERE p.id = :id'
+        )->setParameter('id', $eventId);
+
+        return $query->getOneOrNullResult();
+    }*/
+
 //    /**
-//     * @return Event[] Returns an array of Event objects
+//     * @return Titre[] Returns an array of Titre objects
 //     */
 //    public function findByExampleField($value): array
 //    {
-//        return $this->createQueryBuilder('e')
-//            ->andWhere('e.exampleField = :val')
+//        return $this->createQueryBuilder('t')
+//            ->andWhere('t.exampleField = :val')
 //            ->setParameter('val', $value)
-//            ->orderBy('e.id', 'ASC')
+//            ->orderBy('t.id', 'ASC')
 //            ->setMaxResults(10)
 //            ->getQuery()
 //            ->getResult()
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Event
+//    public function findOneBySomeField($value): ?Titre
 //    {
-//        return $this->createQueryBuilder('e')
-//            ->andWhere('e.exampleField = :val')
+//        return $this->createQueryBuilder('t')
+//            ->andWhere('t.exampleField = :val')
 //            ->setParameter('val', $value)
 //            ->getQuery()
 //            ->getOneOrNullResult()

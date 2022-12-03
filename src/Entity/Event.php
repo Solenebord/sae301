@@ -14,26 +14,31 @@ class Event
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $Titre = null;
+
+    #[ORM\Column(length: 100)]
+    private ?string $titre = null;
 
     #[ORM\Column(type: Types::TEXT)]
-    private ?string $Description = null;
+    private ?string $descript = null;
 
     #[ORM\Column(type: Types::TEXT)]
-    private ?string $Casting = null;
+    private ?string $cast = null;
 
-    #[ORM\Column(length: 50)]
-    private ?string $Genre = null;
+    #[ORM\Column(length: 100)]
+    private ?string $genre = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $Affiche = null;
+    #[ORM\Column(length: 100)]
+    private ?string $affiche = null;
 
-    #[ORM\ManyToOne(inversedBy: 'events')]
-    private ?Lieu $Lieu = null;
+    #[ORM\ManyToOne(targetEntity: Lieu::class, inversedBy: 'events')]
+    private $lieu;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $Date = null;
+    #[ORM\Column(length: 5)]
+    private ?string $horaire = null;
+
+    #[ORM\Column(length: 10)]
+    private ?string $date = null;
+
 
     #[ORM\Column]
     private ?float $prix = null;
@@ -45,85 +50,97 @@ class Event
 
     public function getTitre(): ?string
     {
-        return $this->Titre;
+
+        return $this->titre;
     }
 
-    public function setTitre(string $Titre): self
+    public function setTitre(string $titre): self
     {
-        $this->Titre = $Titre;
+        $this->titre = $titre;
+
 
         return $this;
     }
 
-    public function getDescription(): ?string
+
+    public function getDescript(): ?string
     {
-        return $this->Description;
+        return $this->descript;
     }
 
-    public function setDescription(string $Description): self
+    public function setDescript(string $descript): self
     {
-        $this->Description = $Description;
-
+        $this->descript = $descript;
         return $this;
     }
 
-    public function getCasting(): ?string
+
+    public function getCast(): ?string
     {
-        return $this->Casting;
+        return $this->cast;
     }
 
-    public function setCasting(string $Casting): self
+    public function setCast(string $cast): self
     {
-        $this->Casting = $Casting;
-
+        $this->cast = $cast;
         return $this;
     }
 
     public function getGenre(): ?string
     {
-        return $this->Genre;
+
+        return $this->genre;
     }
 
-    public function setGenre(string $Genre): self
+    public function setGenre(string $genre): self
     {
-        $this->Genre = $Genre;
-
+        $this->genre = $genre;
         return $this;
     }
 
     public function getAffiche(): ?string
     {
-        return $this->Affiche;
+        return $this->affiche;
     }
 
-    public function setAffiche(string $Affiche): self
+    public function setAffiche(string $affiche): self
     {
-        $this->Affiche = $Affiche;
-
+        $this->affiche = $affiche;
         return $this;
     }
 
     public function getLieu(): ?Lieu
     {
-        return $this->Lieu;
+        return $this->lieu;
     }
 
-    public function setLieu(?Lieu $Lieu): self
+    public function setLieu(?Lieu $lieu): self
     {
-        $this->Lieu = $Lieu;
+        $this->lieu = $lieu;
 
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getHoraire(): ?string
     {
-        return $this->Date;
+        return $this->horaire;
     }
 
-    public function setDate(\DateTimeInterface $Date): self
+    public function setHoraire(string $horaire): self
     {
-        $this->Date = $Date;
+        $this->horaire = $horaire;
+        return $this;
+    }
 
+
+    public function getDate(): ?string
+    {
+        return $this->date;
+    }
+
+    public function setDate(string $date): self
+    {
+        $this->date = $date;
         return $this;
     }
 

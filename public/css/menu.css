@@ -1,5 +1,9 @@
 a{
     font-weight: bold;
+
+    color: whitesmoke;
+    text-decoration: none;
+
 }
 
 header{
@@ -10,7 +14,7 @@ header{
     width: 100%;
     display: flex;
     justify-content: space-around;
-    background-color: black;
+    background-color: #17051F;
     align-items: center;
     padding: 10px 50px;
 }
@@ -18,10 +22,11 @@ header{
 #search-header{
     width: 100%;
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
     align-items: center;
     padding: 10px 50px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #17051F;
+    opacity: 0.7;
 }
 
 #header-logo{
@@ -58,4 +63,11 @@ header{
 #utilisateur-pictos{
     width: 15%;
     text-align: right;
+
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: row;
+
 }

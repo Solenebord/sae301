@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panier{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/accueil.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/menu.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+
+    <table>
+        <thead>
+        <tr>
+            <th>article</th>
+            <th>quantite</th>
+            <th>prix unitaire</th>
+            <th>prix total</th>
+        </tr>
+        </thead>
+        <tbody id="zone">
+
+
+
+        </tbody>
+        <tfoot><tr><td id="bas" colspan="3"></td><td><span id="total">0</span>€</td></tr></tfoot>
+    </table>
+    <hr>
+    <a class="bouton_secondaire" href="{{ path('app_manif') }}" >Retour</a>
+    <form action="{{ path('app_validation') }}" method="post">
+        <input type="hidden" name="liste" id="liste">
+        <input type="submit" value="Valider ma commande.">
+    </form>
+    <hr>
+
+    <script src="{{ asset('js/scriptgeneral.js') }}"></script>
+    <script src="{{ asset('js/scriptpanier.js') }}"></script>
+
+{% endblock %}

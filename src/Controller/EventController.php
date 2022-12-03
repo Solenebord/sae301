@@ -2,27 +2,24 @@
 
 namespace App\Controller;
 
-
-use App\Entity\Event;
-use App\Repository\EventRepository;
-use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\Persistence\ManagerRegistry;
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\EventRepository;
+use App\Repository\LieuRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use App\Entity\Lieu;
+use App\Entity\Event;
+use Doctrine\Persistence\ManagerRegistry;
 
-class AccueilController extends AbstractController
+class EventController extends AbstractController
 {
-    #[Route('/accueil', name: 'app_accueil')]
-
-   /* public function index(): Response
-
+    #[Route('/manif', name: 'events')]
+    /*public function index(): Response
     {
-        return $this->render('accueil/index.html.twig', [
-            'controller_name' => 'AccueilController',
+        return $this->render('event/index.html.twig', [
+            'controller_name' => 'EventController',
         ]);
-
     }*/
 
     public function events(
@@ -33,18 +30,17 @@ class AccueilController extends AbstractController
         // récupération de tous les posts
         $events = $EventRepository->findAll();
 
-        $manif = $doctrine->getRepository(Event::class)->findAll();
+        //$manif = $doctrine->getRepository(Event::class)->findAll();
 
         // $lieu = $manif->getLieu();
 
 
 
 
-        return $this->render('accueil/index.html.twig', [
+        return $this->render('manif/index.html.twig', [
             'events' => $events,
             //'lieux' => $lieu
         ]);
-
 
 
     }

@@ -3,9 +3,9 @@
 namespace App\Entity;
 
 use App\Repository\LieuRepository;
+use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: LieuRepository::class)]
 class Lieu
@@ -15,130 +15,74 @@ class Lieu
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $Nom = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $Adresse = null;
+    #[ORM\Column(length: 100)]
+    private ?string $adresse = null;
 
     #[ORM\Column]
-    private ?int $Capacite = null;
+    private ?int $capacite = null;
 
-    #[ORM\OneToMany(mappedBy: 'Lieu', targetEntity: Event::class)]
-    private Collection $events�;
+    #[ORM\Column(length: 100)]
+    private ?string $nom_salle = null;
 
-    #[ORM\OneToMany(mappedBy: 'Lieu', targetEntity: Event::class)]
-    private Collection $events;
-
-    public function __construct()
-    {
-        $this->events� = new ArrayCollection();
-        $this->events = new ArrayCollection();
-    }
+    #[ORM\OneToMany(targetEntity: Event::class, mappedBy: 'lieu')]
+    private $events;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNom(): ?string
-    {
-        return $this->Nom;
-    }
-
-    public function setNom(string $Nom): self
-    {
-        $this->Nom = $Nom;
-
-        return $this;
-    }
-
     public function getAdresse(): ?string
     {
-        return $this->Adresse;
+        return $this->adresse;
     }
 
-    public function setAdresse(string $Adresse): self
+    public function setAdresse(string $adresse): self
     {
-        $this->Adresse = $Adresse;
+        $this->adresse = $adresse;
 
         return $this;
     }
 
     public function getCapacite(): ?int
     {
-        return $this->Capacite;
+        return $this->capacite;
     }
 
-    public function setCapacite(int $Capacite): self
+    public function setCapacite(int $capacite): self
     {
-        $this->Capacite = $Capacite;
+        $this->capacite = $capacite;
 
         return $this;
+    }
+
+    public function getNomSalle(): ?string
+    {
+        return $this->nom_salle;
+    }
+
+    public function setNomSalle(string $nom_salle): self
+    {
+        $this->nom_salle = $nom_salle;
+
+        return $this;
+    }
+
+    public function __construct()
+    {
+        $this->events = new ArrayCollection();
     }
 
     /**
-     * @return Collection<int, Event>
-     */
-    public function getEvents�(): Collection
-    {
-        return $this->events�;
-    }
-
-    public function addEvents(Event $events): self
-    {
-        if (!$this->events�->contains($events)) {
-            $this->events�->add($events);
-            $events->setLieu($this);
-        }
-
-        return $this;
-    }
-
-    public function removeEvents(Event $events): self
-    {
-        if ($this->events�->removeElement($events)) {
-            // set the owning side to null (unless already changed)
-            if ($events->getLieu() === $this) {
-                $events->setLieu(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Event>
+     * @return Collection|Event[]
      */
     public function getEvents(): Collection
     {
         return $this->events;
     }
 
-    public function addEvent(Event $event): self
-    {
-        if (!$this->events->contains($event)) {
-            $this->events->add($event);
-            $event->setLieu($this);
-        }
-
-        return $this;
-    }
-
-    public function removeEvent(Event $event): self
-    {
-        if ($this->events->removeElement($event)) {
-            // set the owning side to null (unless already changed)
-            if ($event->getLieu() === $this) {
-                $event->setLieu(null);
-            }
-        }
-
-        return $this;
-    }
-
     public function __toString(): string
     {
-        return $this->Nom;
+        return $this->nom_salle;
     }
 }

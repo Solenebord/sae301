@@ -1,0 +1,21 @@
+footer{
+    background-color: #17051F;
+    height: 50px;
+    width: 100%;
+    margin-top: 25px;
+
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+#footercontent{
+    padding-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}

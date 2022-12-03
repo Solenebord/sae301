@@ -1,5 +1,7 @@
 html{
-    width: auto;
+    width: 100%;
+    overflow-x: hidden;
+
 }
 body{
     background-color: lightgray;

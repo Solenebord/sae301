@@ -4,7 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+
     "content-hash": "deae32de40f6a7a9086e232b3e008fa2",
+
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1378,6 +1380,7 @@
         },
         {
             "name": "easycorp/easyadmin-bundle",
+
             "version": "v4.4.4",
             "source": {
                 "type": "git",
@@ -1388,6 +1391,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/EasyCorp/EasyAdminBundle/zipball/8d91efa1448b44b7ad0f7be0253daf87cd176c8b",
                 "reference": "8d91efa1448b44b7ad0f7be0253daf87cd176c8b",
+
                 "shasum": ""
             },
             "require": {
@@ -1459,7 +1463,9 @@
             ],
             "support": {
                 "issues": "https://github.com/EasyCorp/EasyAdminBundle/issues",
+
                 "source": "https://github.com/EasyCorp/EasyAdminBundle/tree/v4.4.4"
+
             },
             "funding": [
                 {
@@ -1467,7 +1473,9 @@
                     "type": "github"
                 }
             ],
+
             "time": "2022-11-29T19:44:16+00:00"
+
         },
         {
             "name": "egulias/email-validator",

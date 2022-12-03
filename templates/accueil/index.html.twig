@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block stylesheets %}
+<link href="{{ asset('css/accueil.css') }}" rel="stylesheet" />
+<link href="{{ asset('css/menu.css') }}" rel="stylesheet" />
+<link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+    {#<div id="title">
+        <h1>Bienvenue sur 301.com</h1>
+        #}{# Where dreams come to die. #}{#
+    </div>#}
+
+    <div id="carousel">
+
+    </div>
+
+    <div class="une-titre">
+        <h2>A la une</h2>
+    </div>
+
+    <div id="a-la-une">
+                                    {#Faudra sans doute automatiser ça avec du php ou quoi mais merde#}
+        <a href="manifexemple"><div class="affiche" alt="une affiche">affiche
+            <div class="infos"> <p class="manif-nom">nom</p><p class="manif-genre">genre</p><p class="manif-date">quand</p><p class="manif-desc">blablablablabla</p> </div> </div></a>
+       <a href="manifexemple"><div class="affiche" alt="une affiche">affiche
+            <div class="infos"> <p class="manif-nom">nom</p><p class="manif-genre">genre</p><p class="manif-date">quand</p><p class="manif-desc">blablablablabla</p> </div> </div></a>
+        <a href="manifexemple"><div class="affiche" alt="une affiche">affiche
+            <div class="infos"> <p class="manif-nom">nom</p><p class="manif-genre">genre</p><p class="manif-date">quand</p><p class="manif-desc">blablablablabla</p> </div> </div></a>
+    <div>
+
+    <!--pourquoi je suis pas morte putain !-->
+
+    </div>
+    </div>
+{% endblock %}
+
+

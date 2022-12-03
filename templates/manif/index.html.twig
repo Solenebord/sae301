@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Agenda spectacle{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/accueil.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/menu.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+
+    <div class="une-titre">
+        <h2>Agenda spectacle</h2>
+    </div>
+
+ <div id="liste_carte">
+
+
+
+{#{% if events is defined %}#}
+{#{{ dump(events) }}#}
+
+{% for event in events %}
+
+
+    <a class="carte_lien" href="{{ path('app_produit', {id: event.id} ) }}">
+        <div class="carte_spectacle" style="background-image: url('../images/{{ event.affiche }}')">
+            <div class="carte_genre">
+                <p>{{ event.genre }}</p>
+            </div>
+            <div class="carte_in">
+                <div class="carte_entete">
+                    <p ><span class="carte_date">{{ event.date }}</span> {{ event.horaire }}</p>
+                </div>
+                <div class="info_hover">
+                    <p>{{ event.lieu }}</p>
+                </div>
+                <div class="carte_titre">
+                    <p>{{ event.titre }}</p>
+                </div>
+            </div>
+
+        </div>
+    </a>
+ {% endfor %}
+     {#{% else %}
+        events non défini
+     {% endif %}#}
+
+
+
+
+ </div>
+
+    <script type="text/javascript" src="{{ asset('js/scriptgeneral.js') }}"></script>
+{% endblock %}
+

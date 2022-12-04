@@ -19,7 +19,7 @@
             <h2 class="article_date">
                 {{ events.date }} - {{ events.horaire }}
             </h2>
-            <p id="article_lieu">.{{ events.lieu.nomSalle }} {{ events.lieu.adresse }} {{ events.lieu.capacite }}</p>
+            <p id="article_lieu">.{{ events.lieu.nomSalle }} {{ events.lieu.adresse }} {{ events.lieu.capacite }} places disponibles</p>
             <div id="article_info">
                 <p id="article_description">{{ events.descript }}</p>
                 <p id="article_cast">{{ events.cast }}</p>
@@ -31,7 +31,7 @@
         <div class="article_affiche">
             {# <img src="{{ asset('images') }}{{  events.affiche  }}" alt="affiche {{ events.titre }}">  #}
 
-            <p><span id="prix">{{ events.prix }}</span> €</p>
+            <p><span id="prix">Prix : <br/>{{ events.prix }}</span> €</p>
         </div>
 
 

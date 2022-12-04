@@ -11,7 +11,7 @@ montab.forEach(uneinfo => {
 
     html = `<tr id="${uneinfo.id}">
     <td>${uneinfo.article}</td>
-    <td><button class="moins">-</button><span>${uneinfo.quantite}</span><button class="plus">+</button></td>
+    <td><button class="moins">-</button><span class="qte">${uneinfo.quantite}</span><button class="plus">+</button></td>
     <td ><span class="unitaire">${uneinfo.prix}</span>€</td>
     <td><span class="prix">${uneinfo.prix * uneinfo.quantite}</span>€</td>
     <td><button class="supprimer">Supprimer</button> </td>
@@ -64,6 +64,8 @@ function clickminus(tag){
 
         id = this.parentNode.parentNode.id; // recupere l'id de l'article cliqué
         index = montab.findIndex(element => element.id ==id); //trouver l'article dans la liste du panier
+
+        if (montab[index].quantite >1) {
         montab[index].quantite	= parseInt(montab[index].quantite) -1; //incrementer la quantité
         document.cookie = "panier="+JSON.stringify(montab)+"; path=/"
         // sauvegarde des infos dans le cookie "liste"
@@ -71,6 +73,37 @@ function clickminus(tag){
 
         totalgeneral -= 1*prix
         document.querySelector('#total').innerHTML=totalgeneral
+        } else {
+            montab[index].quantite	= parseInt(montab[index].quantite) -1; //qte passe à zero
+
+            document.cookie = "panier="+JSON.stringify(montab)+"; path=/"
+            // sauvegarde des infos dans le cookie "liste"
+            document.getElementById('liste').value=JSON.stringify(montab);
+
+            totalgeneral -= total;
+            document.querySelector('#total').innerHTML=totalgeneral;
+
+            document.getElementById('zone').deleteRow(index);
+            if (montab.length>1) {
+                index = montab.findIndex(element => element.id ==id);
+                //trouver l'article dans la liste du panier
+                montab.splice(index, 1);
+                console.log(montab);
+
+                document.cookie = "panier="+JSON.stringify(montab)+"; path=/"
+                // sauvegarde des infos dans le cookie "liste"
+                document.getElementById('liste').value=JSON.stringify(montab);// sauver montab pour le formulaire
+
+            } else if(montab.length==1) {
+                document.cookie = "panier=; expires=Mon, 02 Oct 2000 01:00:00 GMT; path=/";
+                // sauvegarde des infos dans le cookie "liste"
+                document.getElementById('liste').value=JSON.stringify(montab);// sauver montab pour le formulaire
+                document.getElementById('table_panier').innerHTML="Votre panier est vide.";
+                lien="{{ path('app_manif')}}";
+                document.getElementById('panier_boutons').innerHTML='<a href="#" class="bouton_primaire">Retourner sur l\'agenda<a>';
+
+            }
+        }
     })
 }
 
@@ -80,9 +113,13 @@ function supprimer(tag){
         console.log('clique supp ok');
         id = this.parentNode.parentNode.id; // recupere l'id de l'article cliqué
         index = montab.findIndex(element => element.id ==id);
+        prix=this.parentNode.parentNode.querySelector('.prix').innerHTML;
 
+        totalgeneral -= prix;
+        document.querySelector('#total').innerHTML=totalgeneral;
 
         document.getElementById('zone').deleteRow(index);
+
 
         if (montab.length>1) {
             index = montab.findIndex(element => element.id ==id);

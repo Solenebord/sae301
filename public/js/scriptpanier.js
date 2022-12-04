@@ -9,29 +9,13 @@ document.getElementById('liste').value=JSON.stringify(montab); // sauver montab 
 var totalgeneral=0
 montab.forEach(uneinfo => {
 
-    html = `<table>
-        <thead>
-        <tr>
-            <th>Article</th>
-            <th>Quantité</th>
-            <th>Prix unitaire</th>
-            <th>Prix total</th>
-            <th>Supprimer l'article</th>
-        </tr>
-        </thead>
-        <tbody><tr id="${uneinfo.id}">
+    html = `<tr id="${uneinfo.id}">
     <td>${uneinfo.article}</td>
     <td><button class="moins">-</button><span>${uneinfo.quantite}</span><button class="plus">+</button></td>
     <td ><span class="unitaire">${uneinfo.prix}</span>€</td>
     <td><span class="prix">${uneinfo.prix * uneinfo.quantite}</span>€</td>
     <td><button class="supprimer">Supprimer</button> </td>
-    </tr></tbody>
-    <tfoot>
-    <tr>
-    <td><button id="vider_panier">Vider le panier</button></td>
-    <td id="bas" colspan="2"></td>
-    <td>Total général</td>
-    <td><span id="total">0</span>€</td></tr></tfoot></table>`;
+    </tr>`;
 
     document.getElementById('zone').innerHTML += html
     totalgeneral += uneinfo.prix * uneinfo.quantite
@@ -94,14 +78,23 @@ function clickminus(tag){
 function supprimer(tag){
     tag.addEventListener('click',function() {
         console.log('clique supp ok');
-        id = this.parentNode.parentNode.id; // recupere l'id de l'article cliqué
-        index = montab.findIndex(element => element.id ==id);//trouver l'article dans la liste du panier
-        montab.splice(index, 1);
-        console.log(montab);
+        if (montab.length>1) {
+            id = this.parentNode.parentNode.id; // recupere l'id de l'article cliqué
+            index = montab.findIndex(element => element.id ==id);//trouver l'article dans la liste du panier
+            montab.splice(index, 1);
+            console.log(montab);
 
-        document.cookie = "panier="+JSON.stringify(montab)+"; path=/"
-        // sauvegarde des infos dans le cookie "liste"
-        document.getElementById('liste').value=JSON.stringify(montab);// sauver montab pour le formulaire
+            document.cookie = "panier="+JSON.stringify(montab)+"; path=/"
+            // sauvegarde des infos dans le cookie "liste"
+            document.getElementById('liste').value=JSON.stringify(montab);// sauver montab pour le formulaire
+
+        } else {
+            document.cookie = "panier=; expires=Mon, 02 Oct 2000 01:00:00 GMT; path=/";
+            // sauvegarde des infos dans le cookie "liste"
+            document.getElementById('liste').value=JSON.stringify(montab);// sauver montab pour le formulaire
+
+        }
+
 
 
 
@@ -111,7 +104,11 @@ function supprimer(tag){
 function vider(tag){
     tag.addEventListener('click',function() {
         console.log('clique vider ok');
-        document.cookie = panier=[];
+        //montab.splice(0, montab.length);
+        document.cookie = "panier=; expires=Mon, 02 Oct 2000 01:00:00 GMT; path=/";
+        // sauvegarde des infos dans le cookie "liste"
+        document.getElementById('liste').value=JSON.stringify(montab);// sauver montab pour le formulaire
+
 
 
     })

@@ -110,3 +110,17 @@ body{
     display: flex;
     flex-direction: column;
 }
+
+/*page panier*/
+
+#message {
+    display: none;
+}
+
+#table_panier {
+    display: block;
+}
+
+#panier_boutons {
+    display: block;
+}

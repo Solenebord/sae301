@@ -1,11 +1,14 @@
 footer{
     background-color: #17051F;
-    height: 50px;
+    height: 40px;
     width: 100%;
-    margin-top: 25px;
+    margin-top: 50px;
 
     color: white;
     font-family: 'Inter', sans-serif;
+
+    position: fixed;
+    bottom: 0px
 }
 
 footer a{
@@ -14,7 +17,7 @@ footer a{
 }
 
 #footercontent{
-    padding-top: 20px;
+    padding-top: 10px;
     width: 100%;
     display: flex;
     justify-content: space-evenly;

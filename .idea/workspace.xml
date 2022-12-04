@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fad9e525-65b1-45bd-9da0-dee129c9be2b" name="Changes" comment="Connexion et inscription fonctionnelle">
-      <change afterPath="$PROJECT_DIR$/templates/security/logout.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/accueil.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/accueil.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/menu.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/scriptpanier.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/scriptpanier.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accueil/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/manif/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/manif/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/panier/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/panier/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/produit/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/produit/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/validation/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/validation/index.html.twig" afterDir="false" />
+    <list default="true" id="fad9e525-65b1-45bd-9da0-dee129c9be2b" name="Changes" comment="Suppression et Inscription">
+      <change afterPath="$PROJECT_DIR$/public/css/footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Security/LoginAuthenticator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/dashboard.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/footer.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +213,7 @@
       <workItem from="1669645610703" duration="2932000" />
       <workItem from="1669708880320" duration="25432000" />
       <workItem from="1669817588651" duration="54446000" />
-      <workItem from="1670097823458" duration="14767000" />
+      <workItem from="1670097823458" duration="20178000" />
     </task>
     <task id="LOCAL-00001" summary="Modification css accueil et agenda, création des cartes pour le listing, bdd Event et Lieu">
       <created>1669736546805</created>
@@ -261,7 +257,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670114253555</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Suppression article">
+      <created>1670149722613</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1670149722613</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Suppression et Inscription">
+      <created>1670160044615</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1670160044615</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,6 +306,8 @@
     <MESSAGE value="Affichage panier et ajout panier" />
     <MESSAGE value="Tunnel d'achat sans css" />
     <MESSAGE value="Connexion et inscription fonctionnelle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Connexion et inscription fonctionnelle" />
+    <MESSAGE value="Suppression article" />
+    <MESSAGE value="Suppression et Inscription" />
+    <option name="LAST_COMMIT_MESSAGE" value="Suppression et Inscription" />
   </component>
 </project>

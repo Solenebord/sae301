@@ -18,6 +18,10 @@ if (liste!==null) {
 else {
     montab =Array()
     console.log('panier vide')
+
+    document.getElementById('message').style.display="block"
+    document.getElementById('table_panier').style.display="none"
+    document.getElementById('panier_boutons').style.display="none"
 }
 
 //On marque combien de produits sont dans le panier (Header)

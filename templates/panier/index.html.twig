@@ -32,16 +32,19 @@
             <td>Total général</td>
             <td><span id="total">0</span>€</td></tr></tfoot></table>
 
+            <hr>
     <div id="panier_boutons">
-    <hr>
+
 
     <a class="bouton_secondaire" href="{{ path('app_manif') }}" >Retour</a>
     <form {%if not app.user%}action="{{ path('app_login') }}"{% else %} action="{{ path('app_validation') }}"{% endif %} method="post">
         <input type="hidden" name="liste" id="liste">
         <input type="submit" value="Valider ma commande.">
     </form>
-    <hr>
+
     </div>
+
+    <hr>
 
     <script src="{{ asset('js/scriptgeneral.js') }}"></script>
     <script src="{{ asset('js/scriptpanier.js') }}"></script>

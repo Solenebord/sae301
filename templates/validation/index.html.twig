@@ -22,19 +22,23 @@
                 <label for="paypal">Paypal</label>
             </div>
 
-            <label for="num_cb">Numéro de la carte</label>
-            <input type="text" id="num_cb" name="num_cb" required>
-
-            <label for="exp_cb">Date d'expiration <span id="date_exp">(mm/aa)</span></label>
-            <input type="text" id="exp_cb" name="exp_cb" required>
-
-            <label for="crypto_cb">Cryptogramme</label>
-            <input type="text" id="crypto_cb" name="crypto_cb" required>
-            <span id="help_text">Ce sont les numéros au dos de votre carte</span>
-
-            <label for="proprio_cb">Nom du propriétaire de la carte</label>
-            <input type="text" id="proprio_cb" name="proprio_cb" required>
-
+            <div>
+                <label for="num_cb">Numéro de la carte</label>
+                <input type="text" id="num_cb" name="num_cb" required>
+            </div>
+            <div>
+                <label for="exp_cb">Date d'expiration <span id="date_exp">(mm/aa)</span></label>
+                <input type="text" id="exp_cb" name="exp_cb" required>
+            </div>
+            <div>
+                <label for="crypto_cb">Cryptogramme</label>
+                <input type="text" id="crypto_cb" name="crypto_cb" required><br/>
+                <span id="help_text">Ce sont les numéros <br/> au dos de votre carte</span>
+            </div>
+            <div>
+                <label for="proprio_cb">Nom du propriétaire de la carte</label>
+                <input type="text" id="proprio_cb" name="proprio_cb" required>
+            </div>
         </form>
     </div>
 
@@ -44,14 +48,19 @@
     <div id="livraison">
         <form action="" method="post" name="form_livraison">
 
+        <div>
             <label for="livraison_adresse">Adresse de livraison</label>
             <input type="text" id="livraison_adresse" name="livraison_adresse" required>
+        </div>
 
+        <div>
             <label for="livraison_ville">Ville</label>
             <input type="text" id="livraison_ville" name="livraison_ville" required>
-
+        </div>
+        <div>
             <label for="livraison_code">Code postal</label>
             <input type="text" id="livraison_code" name="livraison_code" required>
+        </div>
         </form>
     </div>
 
@@ -69,15 +78,17 @@
 
 
         </tbody>
-        <tfoot><tr><td id="bas" colspan="3"></td><td><span id="total">0</span>€</td></tr></tfoot>
+        <tfoot><tr><td id="bas" colspan="3">Total :</td><td><span id="total">0</span>€</td></tr></tfoot>
     </table>
 
     <hr>
+    <div id="payerbottom">
     <a class="bouton_secondaire" href="{{ path('app_manif') }}" >Retour</a>
     <form action="{{ path('app_finalisation') }}" method="post">
         <input type="hidden" name="liste" id="liste">
         <input type="submit" value="Passer au paiement">
     </form>
+    </div>
     <hr>
 
     <script src="{{ asset('js/scriptgeneral.js') }}"></script>

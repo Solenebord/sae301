@@ -1,4 +1,5 @@
 {% block content %}
+
 {#<a href="accueil">Accueil</a> | <a href="manifs">Manifs</a> | <a href="admin">Admin</a>#}
 
 {#{% if is_granted("ROLE_ADMIN") %} pour "si c'est un admin"
@@ -22,6 +23,7 @@
             <a href="{{ path('app_panier') }}">panier
                 {% if app.request.attributes.get('_route') != 'app_panier' or app.request.attributes.get('_route') != 'app_validation' %}
                 <span id="panier">{{ app.session.get('panier')|length }}</span>
+
                 {% endif %}</a> |
             <a href="{{ path('app_login') }}">connexion</a>
              <a href="{{ path('app_register') }}">inscription</a>

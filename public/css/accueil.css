@@ -1,5 +1,9 @@
 html{
-    width: auto;
+
+    width: 100%;
+    overflow-x: hidden;
+
+
 }
 body{
     background-color: lightgray;
@@ -109,4 +113,5 @@ body{
 .article{
     display: flex;
     flex-direction: column;
+
 }

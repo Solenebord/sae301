@@ -36,7 +36,7 @@
     <hr>
 
     <a class="bouton_secondaire" href="{{ path('app_manif') }}" >Retour</a>
-    <form action="{{ path('app_validation') }}" method="post">
+    <form {%if not app.user%}action="{{ path('app_login') }}"{% else %} action="{{ path('app_validation') }}"{% endif %} method="post">
         <input type="hidden" name="liste" id="liste">
         <input type="submit" value="Valider ma commande.">
     </form>

@@ -175,3 +175,100 @@ h1{text-align: center; width: 100%;}
     margin-top: 50px;
     padding: 15px;
 }
+
+/*panier tmts */
+#message{
+    text-align: center;
+}
+
+#table_panier{
+    width: 50%;
+    margin: auto;
+    padding: 15px;
+}
+
+#table_panier th{
+    width: 20%;
+}
+#table_panier td{
+    width: 20%;
+    text-align: center;
+}
+.total{
+    font-weight: bold;
+}
+
+tbody span{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#panier_boutons{
+    width: 30%;
+    line-height: 50px;
+    margin: auto;
+}
+
+
+
+
+
+#payer form{
+    display:grid;
+    margin: 20px 100px;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+
+    width: 70%;
+    margin: auto;
+    margin-top: 15px;
+}
+
+#help_text{
+    font-size: 10px;
+}
+
+#payer form div{
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#livraison form{
+    display:grid;
+    margin: 20px 100px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    width: 70%;
+    margin: auto;
+    margin-top: 15px;
+}
+
+#livraison{
+    margin-top: 20px;
+}
+
+#panierfinal{
+    width: 50%;
+    margin: auto;
+}
+
+#panierfinal tfoot{
+    font-weight: bold;
+}
+
+#panierfinal thead{
+    text-align: center;
+}
+
+#panierfinal tbody{
+    text-align: center;
+}
+
+#payerbottom{
+    width: 50%;
+    margin: auto;
+}

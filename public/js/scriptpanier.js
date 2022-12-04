@@ -9,12 +9,29 @@ document.getElementById('liste').value=JSON.stringify(montab); // sauver montab 
 var totalgeneral=0
 montab.forEach(uneinfo => {
 
-    html = `<tr id="${uneinfo.id}">
+    html = `<table>
+        <thead>
+        <tr>
+            <th>Article</th>
+            <th>Quantité</th>
+            <th>Prix unitaire</th>
+            <th>Prix total</th>
+            <th>Supprimer l'article</th>
+        </tr>
+        </thead>
+        <tbody><tr id="${uneinfo.id}">
     <td>${uneinfo.article}</td>
     <td><button class="moins">-</button><span>${uneinfo.quantite}</span><button class="plus">+</button></td>
     <td ><span class="unitaire">${uneinfo.prix}</span>€</td>
     <td><span class="prix">${uneinfo.prix * uneinfo.quantite}</span>€</td>
-    </tr>`;
+    <td><button class="supprimer">Supprimer</button> </td>
+    </tr></tbody>
+    <tfoot>
+    <tr>
+    <td><button id="vider_panier">Vider le panier</button></td>
+    <td id="bas" colspan="2"></td>
+    <td>Total général</td>
+    <td><span id="total">0</span>€</td></tr></tfoot></table>`;
 
     document.getElementById('zone').innerHTML += html
     totalgeneral += uneinfo.prix * uneinfo.quantite
@@ -25,6 +42,8 @@ document.getElementById('total').innerHTML = totalgeneral
 
 document.querySelectorAll('.plus').forEach(clickplus)
 document.querySelectorAll('.moins').forEach(clickminus)
+document.querySelectorAll('.supprimer').forEach(supprimer)
+document.querySelectorAll('#vider_panier').forEach(vider)
 
 function clickplus(tag){
     tag.addEventListener('click',function() {
@@ -71,4 +90,30 @@ function clickminus(tag){
     })
 }
 
+
+function supprimer(tag){
+    tag.addEventListener('click',function() {
+        console.log('clique supp ok');
+        id = this.parentNode.parentNode.id; // recupere l'id de l'article cliqué
+        index = montab.findIndex(element => element.id ==id);//trouver l'article dans la liste du panier
+        montab.splice(index, 1);
+        console.log(montab);
+
+        document.cookie = "panier="+JSON.stringify(montab)+"; path=/"
+        // sauvegarde des infos dans le cookie "liste"
+        document.getElementById('liste').value=JSON.stringify(montab);// sauver montab pour le formulaire
+
+
+
+    })
+}
+
+function vider(tag){
+    tag.addEventListener('click',function() {
+        console.log('clique vider ok');
+        document.cookie = panier=[];
+
+
+    })
+}
 

@@ -8,7 +8,7 @@
 <header>
     <div id="main-header">
         <div id="header-logo">
-
+            <img src="{{ asset('images/logo.webp') }}">
         </div>
 
 
@@ -16,16 +16,17 @@
             <a href="{{ path('app_accueil') }}">Accueil</a> |
             <a href="{{ path('app_manif') }}">Agenda</a> |
             {% if is_granted("ROLE_ADMIN") %}<a href="admin">Admin</a> | {% endif %}
-            {%if app.user%}<a href="logout">Déconnexion</a>{% endif %}
+            {%if app.user%}<a href="{{ path('app_logout') }}">Déconnexion</a>{% endif %}
         </div>
 
          <div id="utilisateur-pictos">
             <a href="{{ path('app_panier') }}">panier
-                {% if app.request.attributes.get('_route') != 'app_panier' and app.request.attributes.get('_route') != 'app_validation' %}
+                {% if app.request.attributes.get('_route') != 'app_panier' or app.request.attributes.get('_route') != 'app_validation' %}
                 <span id="panier">{{ app.session.get('panier')|length }}</span>
-                {% endif %}</a> 
-                |
-            <a href="{{ path('app_login') }}">connexion / inscription</a>
+
+                {% endif %}</a> |
+            <a href="{{ path('app_login') }}">connexion</a>
+             <a href="{{ path('app_register') }}">inscription</a>
         </div>
     </div>
 

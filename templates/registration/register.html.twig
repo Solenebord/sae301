@@ -5,6 +5,7 @@
 {% block body %}
     <h1>Créez votre compte</h1>
 
+<div id="registrationform">
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.plainPassword, {
@@ -14,6 +15,7 @@
 
         <button type="submit" class="btn">S'inscrire</button>
     {{ form_end(registrationForm) }}
+</div>
 
     <script src="{{ asset('js/scriptgeneral.js') }}"></script>
 {% endblock %}

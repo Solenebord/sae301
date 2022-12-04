@@ -59,6 +59,7 @@ class LoginAuthenticator extends AbstractLoginFormAuthenticator
         }
 
 
+
     }
 
     protected function getLoginUrl(Request $request): string

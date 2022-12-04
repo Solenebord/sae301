@@ -4,6 +4,7 @@
 
 {% block stylesheets %}
 
+
 {% endblock %}
 
 {% block body %}
@@ -28,7 +29,7 @@
 
 
             <a class="carte_lien" href="{{ path('app_produit', {id: event.id} ) }}">
-                <div class="carte_spectacle" style="background-image: url('../images/{{ event.affiche }}')">
+                <div class="carte_spectacle" style="background-image: url('../images/{{ event.affiche }}'); background-size: cover">
                     <div class="carte_genre">
                         <p>{{ event.genre }}</p>
                     </div>
@@ -59,5 +60,4 @@
 
     <script src="{{ asset('js/scriptgeneral.js') }}"></script>
 {% endblock %}
-
 

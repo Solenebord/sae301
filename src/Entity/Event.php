@@ -14,6 +14,7 @@ class Event
     #[ORM\Column]
     private ?int $id = null;
 
+
     #[ORM\Column(length: 100)]
     private ?string $titre = null;
 
@@ -38,6 +39,7 @@ class Event
     #[ORM\Column(length: 10)]
     private ?string $date = null;
 
+
     #[ORM\Column]
     private ?float $prix = null;
 
@@ -48,6 +50,7 @@ class Event
 
     public function getTitre(): ?string
     {
+
         return $this->titre;
     }
 
@@ -55,8 +58,10 @@ class Event
     {
         $this->titre = $titre;
 
+
         return $this;
     }
+
 
     public function getDescript(): ?string
     {
@@ -66,9 +71,9 @@ class Event
     public function setDescript(string $descript): self
     {
         $this->descript = $descript;
-
         return $this;
     }
+
 
     public function getCast(): ?string
     {
@@ -78,19 +83,18 @@ class Event
     public function setCast(string $cast): self
     {
         $this->cast = $cast;
-
         return $this;
     }
 
     public function getGenre(): ?string
     {
+
         return $this->genre;
     }
 
     public function setGenre(string $genre): self
     {
         $this->genre = $genre;
-
         return $this;
     }
 
@@ -102,7 +106,6 @@ class Event
     public function setAffiche(string $affiche): self
     {
         $this->affiche = $affiche;
-
         return $this;
     }
 
@@ -126,9 +129,9 @@ class Event
     public function setHoraire(string $horaire): self
     {
         $this->horaire = $horaire;
-
         return $this;
     }
+
 
     public function getDate(): ?string
     {
@@ -138,7 +141,6 @@ class Event
     public function setDate(string $date): self
     {
         $this->date = $date;
-
         return $this;
     }
 

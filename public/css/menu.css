@@ -1,10 +1,8 @@
-a{
+header a{
     font-weight: bold;
+
     color: whitesmoke;
     text-decoration: none;
-}
-
-header{
 
 }
 
@@ -60,9 +58,11 @@ header{
 #utilisateur-pictos{
     width: 15%;
     text-align: right;
+
 }
 
 .dropdown {
     display: flex;
     flex-direction: row;
+
 }

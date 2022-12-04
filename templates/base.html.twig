@@ -9,8 +9,13 @@
         <link href="{{ asset('css/menu.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
 
+
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
+            <link href="{{ asset('css/footer.css') }}" rel="stylesheet" />
         {% endblock %}
 
         {% block javascripts %}
@@ -21,12 +26,11 @@
 
         {% include ("menu.html.twig")%}
 
+
+
         {% block body %}
 
         {% endblock %}
-
-
-
 
 
 
@@ -35,5 +39,7 @@
         {% endblock %}
 
         {% include ("footer.html.twig")%}
+
+
     </body>
 </html>

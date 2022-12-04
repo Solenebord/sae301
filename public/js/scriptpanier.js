@@ -78,9 +78,15 @@ function clickminus(tag){
 function supprimer(tag){
     tag.addEventListener('click',function() {
         console.log('clique supp ok');
+        id = this.parentNode.parentNode.id; // recupere l'id de l'article cliqué
+        index = montab.findIndex(element => element.id ==id);
+
+
+        document.getElementById('zone').deleteRow(index);
+
         if (montab.length>1) {
-            id = this.parentNode.parentNode.id; // recupere l'id de l'article cliqué
-            index = montab.findIndex(element => element.id ==id);//trouver l'article dans la liste du panier
+            index = montab.findIndex(element => element.id ==id);
+            //trouver l'article dans la liste du panier
             montab.splice(index, 1);
             console.log(montab);
 
@@ -88,12 +94,17 @@ function supprimer(tag){
             // sauvegarde des infos dans le cookie "liste"
             document.getElementById('liste').value=JSON.stringify(montab);// sauver montab pour le formulaire
 
-        } else {
+        } else if(montab.length==1) {
             document.cookie = "panier=; expires=Mon, 02 Oct 2000 01:00:00 GMT; path=/";
             // sauvegarde des infos dans le cookie "liste"
             document.getElementById('liste').value=JSON.stringify(montab);// sauver montab pour le formulaire
+            document.getElementById('table_panier').innerHTML="Votre panier est vide.";
+            lien="{{ path('app_manif')}}";
+            document.getElementById('panier_boutons').innerHTML='<a href="#" class="bouton_primaire">Retourner sur l\'agenda<a>';
 
         }
+
+
 
 
 

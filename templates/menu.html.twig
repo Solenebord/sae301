@@ -25,8 +25,8 @@
                 <span id="panier">{{ app.session.get('panier')|length }}</span>
 
                 {% endif %}</a> |
-            <a href="{{ path('app_login') }}">connexion</a>
-             <a href="{{ path('app_register') }}">inscription</a>
+            {%if app.user == false %} <a href="{{ path('app_login') }}">connexion</a>
+             <a href="{{ path('app_register') }}">inscription</a> {% endif %}
         </div>
     </div>
 

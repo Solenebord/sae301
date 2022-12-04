@@ -272,3 +272,31 @@ tbody span{
     width: 50%;
     margin: auto;
 }
+
+
+
+
+/*manifs individuelles */
+
+.article{
+    text-align: center;
+}
+
+#article_lieu{
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#article_description{
+    background-color: rgb(245, 245, 245);
+    border-radius: 25px;
+    padding: 15px;
+    width: 60%;
+    margin: auto;
+}
+#article_boutons{
+    width: 40%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly
+}
